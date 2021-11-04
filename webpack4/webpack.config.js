@@ -5,7 +5,14 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
-      patterns: ["src/index.html"]
+      patterns: [
+        "src/index.html",
+        // UNCOMMENT BELOW FOR WORKAROUND AND RESTART/REBUILD
+        // {
+        //   from: "node_modules/stencil-workers/dist/cjs/*.worker*.js",
+        //   flatten: true
+        // }
+      ]
     })
   ]
 }
