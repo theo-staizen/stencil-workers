@@ -9,7 +9,6 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "rollup-plugin-copy": "^3.4.0",
     "stencil-workers": "file:stencil-workers-0.0.1.tgz",
     "typescript": "^4.6.4",
     "vite": "^3.1.0",

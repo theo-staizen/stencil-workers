@@ -1,7 +1,5 @@
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy'
-import copy from 'rollup-plugin-copy'
-
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,12 +10,10 @@ export default defineConfig({
   },
   plugins:
   [
-    // @ts-ignore
-    // copy({
+    // WORKAROUND for Bug 2, dist-custom-elements
     // viteStaticCopy({
     //   targets: [
-    //     // WORKAROUND for Bug 1, dist-custom-elements
-    //     { src: './node_modules/stencil-workers/dist/esm/*.worker*.js', dest: './node_modules/.vite/deps/dist' }
+    //     { src: './node_modules/stencil-workers/dist/esm/*.worker*.js', dest: './assets' }
     //   ]
     // })
   ]

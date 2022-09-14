@@ -50,19 +50,22 @@ npm run serve
 
 ## Vite
 
-Build works out of the box if using `/loader`
+Build (`npm run build`) works out of the box if using `/loader`
 
 Bugs:
-1. Breaks during runtime when serviing via `npm run dev`
+1. Breaks during runtime when serving via `npm run dev` (using either methods of importing)
     - Tries to load files that do not exist
     - Even with a copy plugin, could not get this to work correctly
+2. Breaks during runtime when importing manually (`dist-custom-elements`)
+    - Need to use `vite-plugin-static-copy` to copy worker files manually to `./dist/assets` (see Stencil Bug#1)
 
 
 ```sh
 cd vite
 npm i
 npm run build
-npm run serve
+npm run serve # prod
+npm run dev # dev
 ```
 
 ## Esbuild
@@ -73,7 +76,7 @@ Bugs:
 1. Breaks during runtime when using `/loader`
     - Need to use `@chialab/esbuild-plugin-meta-url` to make it work
 2. Breaks during runtime when manually importing (`dist-custom-elements`)
-    - Tries to load files that do not exist
+    - Tries to load files that do not exist (see Stencil Bug#1)
     - Even with a copy plugin, could not get this to work correctly, because plugin has a bug
 
 
