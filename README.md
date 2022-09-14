@@ -64,3 +64,22 @@ npm i
 npm run build
 npm run serve
 ```
+
+## Esbuild
+
+Build works out of the box if using `/loader`
+
+Bugs:
+1. Breaks during runtime when using `/loader`
+    - Need to use `@chialab/esbuild-plugin-meta-url` to make it work
+2. Breaks during runtime when manually importing (`dist-custom-elements`)
+    - Tries to load files that do not exist
+    - Even with a copy plugin, could not get this to work correctly, because plugin has a bug
+
+
+```sh
+cd vite
+npm i
+npm run build
+npm run serve
+```
