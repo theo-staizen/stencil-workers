@@ -1,10 +1,12 @@
-// This breaks because the default `npm init stencil` sets the default module export to "custom-elements/index.js"
-// which will try to load 2 files that are never created.
-// Workaround: Update stencil-workers/package.json to point the `module` to `dist/esm/index.js` instead of `custom-elements`
-// then run `npm i -D ../stencil-workers` in webpack5
+// Build/Serve fails because it is trying to load a file that does not exist
+// No workaround, as this seems to be relative to import file, instead of dist
+/*
+Module not found: Error:
+Can't resolve './assets/format.worker-51010d22.js' in 'path/to/stencil-workers/dist/components'
+*/
 // import { defineCustomElement } from 'stencil-workers/dist/components/my-component';
 // defineCustomElement()
 
-// Loader should work fine with Webpack 5, because `import.meta.url` is now recognised
+// Loader works fine with Webpack 5
 import { defineCustomElements } from 'stencil-workers/loader';
 defineCustomElements();

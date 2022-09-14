@@ -1,8 +1,8 @@
-import './style.css'
-
+// Import using loader, works out of the box
 import { defineCustomElements } from 'stencil-workers/loader';
 defineCustomElements();
 
-// @ts-ignore
-// import { defineCustomElementMyComponent } from 'stencil-workers';
-// defineCustomElementMyComponent();
+// Manual import of component
+// Breaks during build
+// import { defineCustomElement } from 'stencil-workers/dist/components/my-component';
+// defineCustomElement();

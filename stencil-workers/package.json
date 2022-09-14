@@ -15,7 +15,7 @@
     "loader/"
   ],
   "scripts": {
-    "prepare": "stencil build --docs",
+    "prepare": "npm run build && npm pack",
     "clean": "rimraf dist loader www",
     "build": "npm run clean && stencil build --docs",
     "start": "stencil build --dev --watch --serve",

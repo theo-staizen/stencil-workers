@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rollup -c rollup.config.js",
     "start": "rollup -c rollup.config.js -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "http-server ./dist"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +15,10 @@
     "@rollup/plugin-dynamic-import-vars": "^1.4.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@web/rollup-plugin-import-meta-assets": "^1.0.7",
+    "http-server": "^14.1.1",
     "rollup": "^2.59.0",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-delete": "^2.0.0",
-    "stencil-workers": "file:../stencil-workers"
+    "stencil-workers": "file:../stencil-workers/stencil-workers-0.0.1.tgz"
   }
 }
